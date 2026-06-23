@@ -1,5 +1,5 @@
 # file: .github/workflows/release-docker.yml
-# version: 1.0.3
+# version: 1.0.4
 # guid: a4b5c6d7-e8f9-0a1b-2c3d-4e5f6a7b8c9d
 
 name: Docker Release Build
@@ -103,7 +103,7 @@ jobs:
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
             type=raw,value=latest,enable={{is_default_branch}}
-            type=sha,prefix={{branch}}-
+            type=sha,prefix={{branch}}-,enable={{is_default_branch}}
           labels: |
             org.opencontainers.image.title=${{ github.repository }}
             org.opencontainers.image.description=Container for ${{ github.repository }}
