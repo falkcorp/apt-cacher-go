@@ -1,5 +1,5 @@
 # file: .github/workflows/ci.yml
-# version: 1.18.5
+# version: 1.18.6
 # guid: f1a2b3c4-d5e6-f7a8-b9c0-d1e2f3a4b5c6
 
 name: Continuous Integration
@@ -334,7 +334,7 @@ jobs:
     if: needs.detect-changes.outputs.gofiles == 'true' && needs.check-overrides.outputs.skip-tests != 'true'
     strategy:
       matrix:
-        go-version: ["1.24"]
+        go-version: ["1.26"]
 
     steps:
       - name: Checkout repository
