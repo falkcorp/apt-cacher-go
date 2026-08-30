@@ -1,6 +1,7 @@
 # file: .github/workflows/sync-receiver.yml
-# version: 1.7.2
+# version: 1.7.3
 # guid: f7g8h9i0-j1k2-l3m4-n5o6-p7q8r9s0t1u2
+# last-edited: 2026-08-30
 
 # ⚠️  DO NOT EDIT DIRECTLY - This file is managed in ghcommon repository
 # All changes should be made in jdfalk/ghcommon and will be synced to other repositories
@@ -59,7 +60,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           submodules: recursive
-          repository: jdfalk/ghcommon
+          repository: falkcorp/github-common
           path: ghcommon-source
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -74,7 +75,7 @@ jobs:
             echo "verbose_logging=${{ github.event.client_payload.verbose_logging || 'true' }}" >> $GITHUB_OUTPUT
           else
             echo "sync_type=${{ inputs.sync_type }}" >> $GITHUB_OUTPUT
-            echo "source_repo=jdfalk/ghcommon" >> $GITHUB_OUTPUT
+            echo "source_repo=falkcorp/github-common" >> $GITHUB_OUTPUT
             echo "source_sha=manual-dispatch" >> $GITHUB_OUTPUT
             echo "force_sync=${{ inputs.force_sync }}" >> $GITHUB_OUTPUT
             echo "verbose_logging=${{ inputs.verbose_logging }}" >> $GITHUB_OUTPUT
